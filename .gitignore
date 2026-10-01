@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local environment, runtime state and Windows junk
+.env
+.env.*
+!.env.example
+*.pid
+*.pid.lock
+*.tmp
+Thumbs.db
+Desktop.ini
+
+# Local reference material and internal review evidence (not runtime assets)
+/docs/
+
+# Browser/test/debug runtime artifacts
+/playwright-report/
+/test-results/
+/blob-report/
+/coverage/
+/browser-profiles/
+/.playwright/
+/.cache/
+/tmp/
+/temp/

@@ -1,0 +1,158 @@
+:root {
+  color-scheme: dark;
+
+  /* Brand Book: PDF page 7. Separate source colors from UI roles. */
+  --brand-aurex-yellow: #fecf00;
+  --brand-yellow-end: #feed00;
+  --brand-deep-black: #090907;
+  --brand-carbon-black: #0e0e11;
+  --brand-graphite-gray: #575757;
+  --brand-soft-white: #ededed;
+  --brand-deep-green: #206636;
+  --brand-burnt-crimson: #68161b;
+
+  --color-accent: var(--brand-aurex-yellow);
+  --color-accent-secondary: var(--brand-yellow-end);
+  --color-background: var(--brand-deep-black);
+  --color-surface: var(--brand-carbon-black);
+  --color-surface-secondary: color-mix(
+    in srgb,
+    var(--brand-soft-white) 4%,
+    var(--brand-carbon-black)
+  );
+  --color-border: var(--brand-graphite-gray);
+  --color-text: var(--brand-soft-white);
+  --color-text-muted: color-mix(
+    in srgb,
+    var(--brand-soft-white) 64%,
+    var(--brand-carbon-black)
+  );
+  --color-text-on-accent: var(--brand-deep-black);
+  --color-focus: var(--brand-aurex-yellow);
+  --color-success: var(--brand-deep-green);
+  --color-danger: var(--brand-burnt-crimson);
+
+  /* PDF page 6. The -7% display sample is not a general UI rule. */
+  --font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --line-height-body: 1.5;
+  --line-height-small: 1.25;
+
+  /* Project choices, not dimensions specified by the Brand Book. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --border-width: 1px;
+  --focus-width: 2px;
+  --widget-max-width: 30rem;
+  /* Stage 2 surfaces are derived from the unchanged brand palette. */
+  --color-surface-inset: color-mix(in srgb, var(--brand-deep-black) 65%, var(--brand-carbon-black));
+  --color-border-subtle: color-mix(in srgb, var(--brand-graphite-gray) 18%, var(--brand-carbon-black));
+  --color-control-hover: color-mix(in srgb, var(--brand-soft-white) 7%, var(--brand-carbon-black));
+  --color-accent-tint: color-mix(in srgb, var(--brand-aurex-yellow) 8%, transparent);
+  --color-accent-pressed: color-mix(in srgb, var(--brand-aurex-yellow) 14%, transparent);
+  --color-token-green: color-mix(in srgb, var(--brand-deep-green) 75%, var(--brand-soft-white));
+  --color-token-green-surface: color-mix(in srgb, var(--brand-deep-green) 24%, var(--brand-carbon-black));
+  --font-size-amount: 2rem;
+  --radius-panel: 1.125rem;
+  --radius-control: 0.625rem;
+  --widget-padding: 0.875rem;
+  --transition-control: 160ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+html {
+  background-color: var(--color-background);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-inline-size: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+input,
+select {
+  color: inherit;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+:is(button, input, select, textarea):disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: var(--space-1);
+}
+
+img,
+svg {
+  display: block;
+  max-inline-size: 100%;
+}
+
+::selection {
+  color: var(--color-text-on-accent);
+  background-color: var(--color-accent);
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
